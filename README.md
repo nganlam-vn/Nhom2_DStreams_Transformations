@@ -42,6 +42,9 @@ Chương trình sẽ:
 - Lưu các ERROR gốc vào file `raw_errors.txt`
 - Hiển thị kết quả đã chuẩn hóa theo từng batch
 
+<img width="1918" height="1138" alt="image" src="https://github.com/user-attachments/assets/a01df8dc-1189-4aa9-ac41-271ff2a9bf90" />
+
+
 ## **DEMO 2: Các phép biến đổi phức tạp**
 
 Thư mục: `transform_complex_case`
@@ -69,7 +72,10 @@ python log_analyzer_case.py
 Chương trình có 2 tính năng (điều chỉnh bằng biến flag):
 
 - ENABLE_DEMO_1 = 1: Lọc message trùng lặp, chỉ giữ lại 1 bản ghi
-- ENABLE_DEMO_2 = 0: Đánh dấu và hiển thị log có chứa IP/user trong blacklist
+  <img width="1919" height="1138" alt="image" src="https://github.com/user-attachments/assets/343ff33e-f6a8-4831-91f6-40e69390dcd6" />
+
+- ENABLE_DEMO_2 = 1: Đánh dấu và hiển thị log có chứa IP/user trong blacklist
+<img width="1918" height="1137" alt="image" src="https://github.com/user-attachments/assets/79f43117-61d7-4575-9019-28bcec2a9352" />
 
 ## **BÀI TẬP**
 
