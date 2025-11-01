@@ -1,0 +1,31 @@
+INFO - Application startup completed successfully
+ERROR - Database connection pool exhausted
+WARN - Memory usage reached 85% threshold
+INFO - User authentication successful for admin@company.com
+ERROR - Database connection pool exhausted
+ERROR - File upload failed: insufficient disk space
+DEBUG - Cache hit ratio: 87.3% for product catalog
+INFO - Payment transaction processed: $299.99
+ERROR - Network timeout while connecting to payment gateway
+WARN - SSL certificate expires in 7 days
+ERROR - Permission denied: user lacks admin privileges
+INFO - Email notification sent to 1,245 subscribers
+ERROR - API rate limit exceeded for client 192.168.1.100
+ERROR - API rate limit exceeded for client 192.168.1.100
+DEBUG - SQL query execution time: 2.34ms
+WARN - High CPU usage detected on server node-03
+INFO - Scheduled maintenance task completed successfully
+ERROR - Redis connection lost, switching to backup cache
+ERROR - JSON parsing error in API request payload
+WARN - Disk usage on /var/log partition: 92%
+INFO - Load balancer health check passed for all nodes
+ERROR - Elasticsearch cluster unhealthy: 2 nodes down
+DEBUG - JWT token validation successful
+INFO - Report generation completed: monthly_sales.pdf
+ERROR - Rate limit exceeded for API key: user_123456
+WARN - Session timeout for user ID: 12847
+INFO - Microservice deployment completed: user-service v2.1.3
+ERROR - Docker container crashed: payment-processor
+ERROR - Docker container crashed: payment-processor
+INFO - Real-time analytics pipeline processing 15K events/sec
+ERROR - S3 bucket access denied: invalid AWS credentials

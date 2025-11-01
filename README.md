@@ -1,23 +1,106 @@
 # Nhom2_DStreams_Transformations
-Demo và Bài tập về nhà của nội dung Các phép biến đổi trên DStreams. 
 
-## **HƯỚNG DẪN CHẠY** 
+Demo và Bài tập về nhà của nội dung Các phép biến đổi trên DStreams.
+
+## **HƯỚNG DẪN CHẠY**
 
 ### **Bước 1: Chuẩn bị và Khởi chạy Môi trường**
-1.	Đảm bảo Spark đã dược cài đặt trên máy
-____________________________________
-### **Bước 2: Dùng file logs có sẵn và lấy ngẫu nhiên các logs để khởi tạo streaming logs**
-Producer sẽ giả lập các logs và gửi liên tục 
-1.	Mở terminal, truy cập vào thư mục có chứa script send_logs.py và chạy:
+
+1. Đảm bảo Spark đã được cài đặt trên máy
+2. Đảm bảo Python đã được cài đặt với các thư viện cần thiết:
+   - pyspark
+   - logging
+
+## **DEMO 1: Phép biến đổi cơ bản trên DStreams**
+
+Thư mục: `transformation_dstream_demo`
+
+### **Bước 1: Khởi động Producer**
+
+1. Mở terminal thứ nhất
+2. Di chuyển vào thư mục `transformation_dstream_demo`
+3. Chạy script để gửi logs:
+
 ```bash
 python send_logs.py
 ```
-<img width="945" height="250" alt="image" src="https://github.com/user-attachments/assets/7e7f5849-3ccf-4b15-a278-f804f6099489" />
 
-________________________________________
-### **Bước 3: Khởi tạo chương trình **
-1.	Khởi tạo chương trình filter và map tương ứng để trích xuất một thông tin cụ thể (ví dụ: ip của người dùng):
+### **Bước 2: Chạy Log Analyzer**
+
+1. Mở terminal thứ hai
+2. Di chuyển vào thư mục `transformation_dstream_demo`
+3. Chạy script phân tích logs:
+
 ```bash
-python log_analyzer_exercise
+python log_analyzer.py
 ```
-<img width="945" height="485" alt="image" src="https://github.com/user-attachments/assets/c714a6b6-c082-47c3-8c69-fbd0b7467f2f" />
+
+Chương trình sẽ:
+
+- Lọc các log có mức "ERROR"
+- Chuyển đổi nội dung log thành chữ hoa
+- Lưu các ERROR gốc vào file `raw_errors.txt`
+- Hiển thị kết quả đã chuẩn hóa theo từng batch
+
+## **DEMO 2: Các phép biến đổi phức tạp**
+
+Thư mục: `transform_complex_case`
+
+### **Bước 1: Khởi động Producer**
+
+1. Mở terminal thứ nhất
+2. Di chuyển vào thư mục `transform_complex_case`
+3. Chạy script để gửi logs:
+
+```bash
+python send_logs.py
+```
+
+### **Bước 2: Chạy Log Analyzer**
+
+1. Mở terminal thứ hai
+2. Di chuyển vào thư mục `transform_complex_case`
+3. Chạy script phân tích logs:
+
+```bash
+python log_analyzer_case.py
+```
+
+Chương trình có 2 tính năng (điều chỉnh bằng biến flag):
+
+- ENABLE_DEMO_1 = 1: Lọc message trùng lặp, chỉ giữ lại 1 bản ghi
+- ENABLE_DEMO_2 = 0: Đánh dấu và hiển thị log có chứa IP/user trong blacklist
+
+## **BÀI TẬP**
+
+Thư mục: `exercises`
+
+### **Bước 1: Khởi động Producer**
+
+1. Mở terminal thứ nhất
+2. Di chuyển vào thư mục `exercises`
+3. Chạy script để gửi logs:
+
+```bash
+python send_logs.py
+```
+
+Producer sẽ bắt đầu gửi logs liên tục:
+
+<img width="945" height="250" alt="Producer sending logs" src="https://github.com/user-attachments/assets/7e7f5849-3ccf-4b15-a278-f804f6099489" />
+
+### **Bước 2: Chạy Log Analyzer**
+
+1. Mở terminal thứ hai
+2. Di chuyển vào thư mục `exercises`
+3. Khởi tạo chương trình filter và map để trích xuất thông tin cụ thể (ví dụ: ip của người dùng):
+
+```bash
+python log_analyzer_exercise.py
+```
+
+Kết quả phân tích sẽ được hiển thị như sau:
+
+<img width="945" height="485" alt="Log analysis results" src="https://github.com/user-attachments/assets/c714a6b6-c082-47c3-8c69-fbd0b7467f2f" />
+
+File logs mẫu được cung cấp trong `sample_logs_exercise.txt`
